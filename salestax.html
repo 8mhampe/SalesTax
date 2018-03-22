@@ -26,7 +26,7 @@
                 </div>
                 <div class="options">
                     <label>City</label>
-                    <input type="text" name="" value="">
+                    <input id="cityBoi"type="text" name="" value="">
                 </div>
                 <button onclick="calculate()">Calculate</button>
             </div>
@@ -41,16 +41,41 @@
             const doc=document;
         //Query select your information
             let price = doc.querySelector(".cost");
-            let shippingType = doc.querySelectorAll();
-            let shippingLocation;
+            let shippingType = doc.querySelectorAll("shipping");
+            let shippingLocation = doc.querySelector(".cityBoi");
 
         //conditionally choose the shipping tax
             let shippingTax;
+            let tax08250 = ['Rockford','Aurora','Waukegan'];
+            let tax08500 = ['Springfield','Bolingbrook'];
+            let tax08750 = ['Joliet','Bloomington'];
+            let tax07500 = ['Naperville'];
+            let tax09000 = ['Champaign'];
+            let tax09250 = ['Decatur'];
             let tax10000 = ['Peoria','Arlington Heights','Schaumburg','Evanston','Palatine'];
+            let tax10250 = ['Chicago','Elgin','Skokie'];
 
             if(tax10000.includes(shippingLocation)){
-            //think about it
-        }
+                shippingTax = shippingType*1.1;
+            }
+            if(tax10000.includes(shippingLocation)){
+                shippingTax = shippingType*1.1;
+            }
+            if(tax10000.includes(shippingLocation)){
+                shippingTax = shippingType*1.1;
+            }
+            if(tax10000.includes(shippingLocation)){
+                shippingTax = shippingType*1.1;
+            }
+            if(tax10000.includes(shippingLocation)){
+                shippingTax = shippingType*1.1;
+            }
+            if(tax10000.includes(shippingLocation)){
+                shippingTax = shippingType*1.1;
+            }
+            if(tax10000.includes(shippingLocation)){
+                shippingTax = shippingType*1.1;
+            }
 
 
 
