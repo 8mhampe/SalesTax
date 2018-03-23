@@ -20,9 +20,10 @@
                 </div>
                 <div class="options">
                     <label>Shipping</label><br><br>
-                    <input type="radio" name="shipping" value="Standard">Standard</input><br>
-                    <input type="radio" name="shipping" value="Priority">Priority</input><br>
-                    <input type="radio" name="shipping" value="Express">Express</input><br>
+                    <select id="shipping" name="">
+                    <option value="standard">Standard</option>
+                    <option value="priority">Priority</option>
+                    <option value="express">Express</option>
                 </div>
                 <div class="options">
                     <label>City</label>
@@ -41,10 +42,10 @@
             const doc=document;
         //Query select your information
             let price = doc.querySelector(".cost");
-            let shippingType = doc.querySelectorAll("shipping");
+            let shippingType = doc.querySelector(".shipping");
             let shippingLocation = doc.querySelector(".cityBoi");
+            let totalCost;
 
-        //conditionally choose the shipping tax
             let shippingTax;
             let tax08250 = ['Rockford','Aurora','Waukegan'];
             let tax08500 = ['Springfield','Bolingbrook'];
@@ -55,28 +56,30 @@
             let tax10000 = ['Peoria','Arlington Heights','Schaumburg','Evanston','Palatine'];
             let tax10250 = ['Chicago','Elgin','Skokie'];
 
-            if(tax10000.includes(shippingLocation)){
+            if(tax08250.includes(shippingLocation)){
+                shippingTax = shippingType*1.0825;
+            }
+            else if(tax08500.includes(shippingLocation)){
+                shippingTax = shippingType*1.085;
+            }
+            else if(tax08750.includes(shippingLocation)){
+                shippingTax = shippingType*1.0875;
+            }
+            else if(tax07500.includes(shippingLocation)){
+                shippingTax = shippingType*1.075;
+            }
+            else if(tax09000.includes(shippingLocation)){
+                shippingTax = shippingType*1.09;
+            }
+            else if(tax09250.includes(shippingLocation)){
+                shippingTax = shippingType*1.0925;
+            }
+            else if(tax10000.includes(shippingLocation)){
                 shippingTax = shippingType*1.1;
             }
-            if(tax10000.includes(shippingLocation)){
-                shippingTax = shippingType*1.1;
+            else if(tax10250.includes(shippingLocation)){
+                shippingTax = shippingType*1.1025;
             }
-            if(tax10000.includes(shippingLocation)){
-                shippingTax = shippingType*1.1;
-            }
-            if(tax10000.includes(shippingLocation)){
-                shippingTax = shippingType*1.1;
-            }
-            if(tax10000.includes(shippingLocation)){
-                shippingTax = shippingType*1.1;
-            }
-            if(tax10000.includes(shippingLocation)){
-                shippingTax = shippingType*1.1;
-            }
-            if(tax10000.includes(shippingLocation)){
-                shippingTax = shippingType*1.1;
-            }
-
 
 
         }
