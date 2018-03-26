@@ -10,29 +10,29 @@
         <section id="widget">
             <header>
                 <h1>Illinois Sales Tax Calculator</h1>
-                <h4>price of goods and services changes based on the city or county purchased.</h4>
+                <h4>Price of goods and services changes based on the city or county purchased.</h4>
             </header>
             <div id="user-input">
-                <p>You will need a few inputs to make this work properly.  You can delete this comment once you feel you know how many variables you need.</p>
                 <div class="options">
                     <label>Price</label>
                     <input id="cost" type="text" name="" value=""></input>
                 </div>
                 <div class="options">
-                    <label>Shipping</label><br><br>
+                    <label>Shipping</label><br></br>
                     <select id="shipping" name="">
-                    <option value="standard">Standard</option>
-                    <option value="priority">Priority</option>
-                    <option value="express">Express</option>
+                        <option value=2.99>Standard</option>
+                        <option value=4.99>Priority</option>
+                        <option value=8.99>Express</option>
+                    </select>
                 </div>
                 <div class="options">
                     <label>City</label>
-                    <input id="cityBoi"type="text" name="" value="">
+                    <input id="cityBoi"type="text" name="" value=""></input>
                 </div>
                 <button onclick="calculate()">Calculate</button>
             </div>
             <footer>
-                <span id="answer"></span>
+                <span id="answer" value=""></span>
             </footer>
         </section>
     </body>
@@ -81,7 +81,7 @@
                 shippingTax = shippingType*1.1025;
             }
 
-
+            totalCost = (price*1.0625) + shippingtax;
         }
     </script>
 </html>
