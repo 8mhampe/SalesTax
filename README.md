@@ -18,3 +18,15 @@ Your shipping should be a function of two variables: the type and the location. 
 -  In the javascript, use query selectors to store the information in variables
 -  Do some math with the variables to calculate the total cost
 -  display the answer to your selection in the span element.
+## Extra Challenge
+If you get the price to display, enable a new feature which will also predict the expected date of delivery. This willl be based off of the shippingtype variable that you used in the previous example.
+
+standard shipping will be delivered 5 days later
+priority shipping will be delivered 3 days later
+express shipping will be delivered 2 days later
+To compelte this challenge you will need to add a new span element underneath the answer span. Follow the same process of selecting information and conditionally setting variables and updating html elements to produce the desired effect. It would probably be easiest to make additions to your code than invent a whole new function.
+
+You will need to use the JavaScript Date Object to complete this easily. The most mathematics you will need is adding and multiplication. Read the code examples below how to get, set and update Dates!
+
+Date.getTime()
+Date.setTime()

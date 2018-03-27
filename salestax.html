@@ -27,7 +27,7 @@
                 </div>
                 <div class="options">
                     <label>City</label>
-                    <input id="cityBoi"type="text" name="" value=""></input>
+                    <input id="cityBoi" type="text" name="" value=""></input>
                 </div>
                 <button onclick="calculate()">Calculate</button>
             </div>
@@ -40,10 +40,10 @@
 
         function calculate(){
             const doc=document;
-        //Query select your information
-            let price = doc.querySelector(".cost");
-            let shippingType = doc.querySelector(".shipping");
-            let shippingLocation = doc.querySelector(".cityBoi");
+
+            let price = Number(doc.querySelector("#cost").value);
+            let shippingType = doc.querySelector("#shipping").value;
+            let shippingLocation = doc.querySelector("#cityBoi").value;
             let totalCost;
 
             let shippingTax;
@@ -55,6 +55,7 @@
             let tax09250 = ['Decatur'];
             let tax10000 = ['Peoria','Arlington Heights','Schaumburg','Evanston','Palatine'];
             let tax10250 = ['Chicago','Elgin','Skokie'];
+
 
             if(tax08250.includes(shippingLocation)){
                 shippingTax = shippingType*1.0825;
@@ -77,11 +78,13 @@
             else if(tax10000.includes(shippingLocation)){
                 shippingTax = shippingType*1.1;
             }
-            else if(tax10250.includes(shippingLocation)){
+            else(tax10250.includes(shippingLocation)){
                 shippingTax = shippingType*1.1025;
             }
 
-            totalCost = (price*1.0625) + shippingtax;
+            totalCost = (price*1.0625) + shippingType*shippingtax;
+            let answer = doc.querySelector("#answer");
+            answer.innerhtml = totalCost;
         }
     </script>
 </html>
