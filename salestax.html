@@ -20,9 +20,9 @@
                 <div class="options">
                     <label>Shipping</label><br></br>
                     <select id="shipping" name="">
-                        <option value=2.99>Standard</option>
-                        <option value=4.99>Priority</option>
-                        <option value=8.99>Express</option>
+                        <option value="2.99">Standard</option>
+                        <option value="4.99">Priority</option>
+                        <option value="8.99">Express</option>
                     </select>
                 </div>
                 <div class="options">
@@ -33,6 +33,7 @@
             </div>
             <footer>
                 <span id="answer" value=""></span>
+                <span id="dateThing" value=""></span>
             </footer>
         </section>
     </body>
@@ -58,33 +59,36 @@
 
 
             if(tax08250.includes(shippingLocation)){
-                shippingTax = shippingType*1.0825;
+                shippingTax = 1.0825;
             }
             else if(tax08500.includes(shippingLocation)){
-                shippingTax = shippingType*1.085;
+                shippingTax = 1.085;
             }
             else if(tax08750.includes(shippingLocation)){
-                shippingTax = shippingType*1.0875;
+                shippingTax = 1.0875;
             }
             else if(tax07500.includes(shippingLocation)){
-                shippingTax = shippingType*1.075;
+                shippingTax = 1.075;
             }
             else if(tax09000.includes(shippingLocation)){
-                shippingTax = shippingType*1.09;
+                shippingTax = 1.09;
             }
             else if(tax09250.includes(shippingLocation)){
-                shippingTax = shippingType*1.0925;
+                shippingTax = 1.0925;
             }
             else if(tax10000.includes(shippingLocation)){
-                shippingTax = shippingType*1.1;
+                shippingTax = 1.1;
             }
-            else(tax10250.includes(shippingLocation)){
-                shippingTax = shippingType*1.1025;
+            else{
+                shippingTax = 1.1025;
             }
 
-            totalCost = (price*1.0625) + shippingType*shippingtax;
+            totalCost = (price*1.0625) + shippingType*shippingTax;
             let answer = doc.querySelector("#answer");
-            answer.innerhtml = totalCost;
+            answer.innerHTML = totalCost;
+
+            let date = doc.querySelector("#dateThing")
+
         }
     </script>
 </html>
